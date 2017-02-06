@@ -606,7 +606,7 @@ class MenuBuilder implements Countable
     {
         if (config('menus.ordering') || $this->ordering) {
             return $this->toCollection()->sortBy(function ($item) {
-                return $item->order;
+                return $item->title;
             })->all();
         }
 
