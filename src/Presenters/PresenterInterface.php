@@ -1,8 +1,8 @@
 <?php
 
-namespace Pingpong\Menus\Presenters;
+namespace Hechoenlaravel\JarvisMenus\Presenters;
 
-use Pingpong\Menus\MenuItem;
+use Hechoenlaravel\JarvisMenus\MenuItem;
 
 interface PresenterInterface
 {
@@ -23,7 +23,7 @@ interface PresenterInterface
     /**
      * Get menu tag without dropdown wrapper.
      *
-     * @param \Pingpong\Menus\MenuItem $item
+     * @param \Hechoenlaravel\JarvisMenus\MenuItem $item
      *
      * @return string
      */
@@ -39,7 +39,7 @@ interface PresenterInterface
     /**
      * Get divider tag wrapper.
      *
-     * @param \Pingpong\Menus\MenuItem $item
+     * @param \Hechoenlaravel\JarvisMenus\MenuItem $item
      *
      * @return mixed
      */
@@ -48,7 +48,7 @@ interface PresenterInterface
     /**
      * Get menu tag with dropdown wrapper.
      *
-     * @param \Pingpong\Menus\MenuItem $item
+     * @param \Hechoenlaravel\JarvisMenus\MenuItem $item
      *
      * @return string
      */
@@ -57,7 +57,7 @@ interface PresenterInterface
     /**
      * Get child menu items.
      *
-     * @param \Pingpong\Menus\MenuItem $item
+     * @param \Hechoenlaravel\JarvisMenus\MenuItem $item
      *
      * @return string
      */

@@ -1,8 +1,8 @@
 <?php
 
-namespace Pingpong\Menus\Presenters\Bootstrap;
+namespace Hechoenlaravel\JarvisMenus\Presenters\Bootstrap;
 
-use Pingpong\Menus\Presenters\Presenter;
+use Hechoenlaravel\JarvisMenus\Presenters\Presenter;
 
 class SidebarMenuPresenter extends Presenter
 {
@@ -13,7 +13,7 @@ class SidebarMenuPresenter extends Presenter
      */
     public function getOpenTagWrapper()
     {
-        return '<ul class="nav navbar-nav">';
+        return PHP_EOL . '<ul class="sidebar-menu">' . PHP_EOL;
     }
 
     /**
@@ -29,15 +29,13 @@ class SidebarMenuPresenter extends Presenter
     /**
      * Get menu tag without dropdown wrapper.
      *
-     * @param \Pingpong\Menus\MenuItem $item
+     * @param \Hechoenlaravel\JarvisMenus\MenuItem $item
      *
      * @return string
      */
     public function getMenuWithoutDropdownWrapper($item)
     {
-        return '<li'.$this->getActiveState($item).'>
-			<a href="'.$item->getUrl().'" '.$item->getAttributes().'>'
-        .$item->getIcon().' '.$item->title.'</a></li>'.PHP_EOL;
+        return '<li'.$this->getActiveState($item).'><a href="'.$item->getUrl().'" '.$item->getAttributes().'>'.$item->getIcon().' <span>'.$item->title.'</span></a></li>'.PHP_EOL;
     }
 
     /**
@@ -82,33 +80,37 @@ class SidebarMenuPresenter extends Presenter
      */
     public function getMenuWithDropDownWrapper($item)
     {
-        $id = str_random();
-
         return '
-		<li class="'.$this->getActiveStateOnChild($item).' panel panel-default" id="dropdown">
-			<a data-toggle="collapse" href="#'.$id.'">
-				'.$item->getIcon().' '.$item->title.' <span class="caret"></span>
-			</a>
-			<div id="'.$id.'" class="panel-collapse collapse '.$this->getActiveStateOnChild($item, 'in').'">
-				<div class="panel-body">
-					<ul class="nav navbar-nav">
-						'.$this->getChildMenuItems($item).'
-					</ul>
-				</div>
-			</div>
-		</li>
-		'.PHP_EOL;
+      		<li class="treeview' . $this->getActiveStateOnChild($item, ' active') . '">
+                <a href="#">
+                    ' . $item->getIcon() . '
+                    <span>' . $item->title . '</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    ' . $this->getChildMenuItems($item) . '
+                </ul>
+            </li>';
     }
 
     /**
      * Get multilevel menu wrapper.
      *
-     * @param \Pingpong\Menus\MenuItem $item
+     * @param \Hechoenlaravel\JarvisMenus\MenuItem $item
      *
      * @return string`
      */
     public function getMultiLevelDropdownWrapper($item)
     {
-        return $this->getMenuWithDropDownWrapper($item);
+        return '<li class="'.$this->getActiveStateOnChild($item, ' active').'">
+		          <a href="#">
+					'.$item->getIcon().' '.$item->title.'
+			      	<i class="fa fa-angle-left pull-right"></i>
+			      </a>
+			      <ul class="treeview-menu">
+			      	'.$this->getChildMenuItems($item).'
+			      </ul>
+		      	</li>'
+        .PHP_EOL;
     }
 }

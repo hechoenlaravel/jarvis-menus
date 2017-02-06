@@ -1,35 +1,37 @@
 {
-  "name": "pingpong/menus",
-  "description": "Laravel Menus",
+  "name": "hechoenlaravel/jarvis-menus",
+  "description": "Jarvis Platform menus",
   "keywords": [
     "laravel",
     "menus",
-    "pingpong",
     "navigation",
     "nav",
     "bootstrap"
   ],
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "authors": [
     {
       "name": "Pingpong Labs",
       "email": "pingpong.labs@gmail.com"
+    },
+    {
+      "name": "Jose Fonseca",
+      "email": "jose@ditecnologia.com"
     }
   ],
   "require": {
     "php": ">=5.5.9",
-    "illuminate/support": "5.2.*",
-    "illuminate/config": "5.2.*",
-    "illuminate/view": "5.2.*",
+    "illuminate/support": "5.4.*",
+    "illuminate/config": "5.4.*",
+    "illuminate/view": "5.4.*",
     "laravelcollective/html": "~5.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4",
-    "mockery/mockery": "~0.9"
+
   },
   "autoload": {
     "psr-4": {
-      "Pingpong\\Menus\\": ""
+      "Hechoenlaravel\\JarvisMenus\\": "src/"
     }
   },
   "minimum-stability": "stable"

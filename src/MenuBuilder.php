@@ -1,6 +1,6 @@
 <?php
 
-namespace Pingpong\Menus;
+namespace Hechoenlaravel\JarvisMenus;
 
 use Countable;
 use Illuminate\Config\Repository;
@@ -27,7 +27,7 @@ class MenuBuilder implements Countable
      *
      * @var string
      */
-    protected $presenter = 'Pingpong\Menus\Presenters\Bootstrap\NavbarPresenter';
+    protected $presenter = 'Hechoenlaravel\JarvisMenus\Presenters\Bootstrap\SidebarMenuPresenter';
 
     /**
      * Style name for each presenter.

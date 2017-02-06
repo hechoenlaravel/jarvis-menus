@@ -1,11 +1,11 @@
 <?php
 
-namespace Pingpong\Menus;
+namespace Hechoenlaravel\JarvisMenus;
 
 use Closure;
 use Countable;
-use Illuminate\Config\Repository;
 use Illuminate\View\Factory;
+use Illuminate\Config\Repository;
 
 class Menu implements Countable
 {
@@ -34,7 +34,7 @@ class Menu implements Countable
      * @param string $name
      * @param Closure $callback
      *
-     * @return \Pingpong\Menus\MenuBuilder
+     * @return \Hechoenlaravel\JarvisMenus\MenuBuilder
      */
     public function make($name, \Closure $callback)
     {
@@ -47,7 +47,7 @@ class Menu implements Countable
      * @param string   $name
      * @param Callable $resolver
      *
-     * @return \Pingpong\Menus\MenuBuilder
+     * @return \Hechoenlaravel\JarvisMenus\MenuBuilder
      */
     public function create($name, Closure $resolver)
     {

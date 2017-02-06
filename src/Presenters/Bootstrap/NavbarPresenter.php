@@ -1,8 +1,8 @@
 <?php
 
-namespace Pingpong\Menus\Presenters\Bootstrap;
+namespace Hechoenlaravel\JarvisMenus\Presenters\Bootstrap;
 
-use Pingpong\Menus\Presenters\Presenter;
+use Hechoenlaravel\JarvisMenus\Presenters\Presenter;
 
 class NavbarPresenter extends Presenter
 {
@@ -87,7 +87,7 @@ class NavbarPresenter extends Presenter
     /**
      * Get multilevel menu wrapper.
      *
-     * @param \Pingpong\Menus\MenuItem $item
+     * @param \Hechoenlaravel\JarvisMenus\MenuItem $item
      *
      * @return string`
      */

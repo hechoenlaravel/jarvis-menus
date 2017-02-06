@@ -1,11 +1,11 @@
 <?php
 
-namespace Pingpong\Menus;
+namespace Hechoenlaravel\JarvisMenus;
 
 use Closure;
-use Illuminate\Contracts\Support\Arrayable as ArrayableContract;
 use Collective\Html\HtmlFacade as HTML;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Contracts\Support\Arrayable as ArrayableContract;
 
 class MenuItem implements ArrayableContract
 {
@@ -311,7 +311,7 @@ class MenuItem implements ArrayableContract
      */
     public function getUrl()
     {
-        return !empty($this->route) ? route($this->route[0], $this->route[1]) : url($this->url);
+        return !empty($this->route) ? route($this->route[0], $this->route[1]) : url(!empty($this->url) ? $this->url : "#");
     }
 
     /**
